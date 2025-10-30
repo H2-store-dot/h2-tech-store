@@ -1,18 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Smart Watches - H2 Tech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Smartwatch - H2 Tech</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-image: url('R.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .watches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .watch-option {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .watch-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .watch-image {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .watch-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .watch-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .coming-soon {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+        }
+
+        .coming-soon .watch-image {
+            color: #6c757d;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>Choose Your Smartwatch</h1>
+            <p>Select from our premium collection of smartwatches</p>
+        </header>
+
+        <div class="watches-grid">
+            <!-- C90 Smart Watch -->
+            <a href="c90-smartwatch.html" class="watch-option">
+                <div class="watch-image">⌚</div>
+                <h3 class="watch-title">C90 Smart Watch</h3>
+                <p class="watch-description">Large HD display, Bluetooth calling, health monitoring</p>
+                <div class="price">$39.99</div>
+                <div style="color: #25D366; font-weight: bold;">Click to View</div>
+            </a>
+
+            <!-- Apple Watch -->
+            <a href="apple-watch.html" class="watch-option">
+                <div class="watch-image">📱</div>
+                <h3 class="watch-title">Apple Watch Series</h3>
+                <p class="watch-description">Premium design, advanced health features, iOS integration</p>
+                <div class="price">$299.99</div>
+                <div style="color: #25D366; font-weight: bold;">Click to View</div>
+            </a>
+
+            <!-- Coming Soon 1 -->
+            <div class="watch-option coming-soon">
+                <div class="watch-image">⏳</div>
+                <h3 class="watch-title">New Model</h3>
+                <p class="watch-description">Exciting new smartwatch coming soon</p>
+                <div class="price">Coming Soon</div>
+                <div style="color: #6c757d; font-weight: bold;">Stay Tuned</div>
+            </div>
+
+            <!-- Coming Soon 2 -->
+            <div class="watch-option coming-soon">
+                <div class="watch-image">⏳</div>
+                <h3 class="watch-title">New Model</h3>
+                <p class="watch-description">Another amazing smartwatch arriving soon</p>
+                <div class="price">Coming Soon</div>
+                <div style="color: #6c757d; font-weight: bold;">Stay Tuned</div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">← Back to Store</a>
+        </div>
+    </div>
 </body>
 </html>
