@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Watches - H2 Tech</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+        }
+        
+        body {
             background-image: url('R.jpeg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
