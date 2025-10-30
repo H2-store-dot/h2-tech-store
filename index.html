@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H2 Tech - Premium Electronics by Hamza & Houssam</title>
+    <title>H2 Tech - Premium Electronics</title>
     <style>
         * {
             margin: 0;
@@ -12,17 +12,16 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         /* Language Switcher */
@@ -32,13 +31,13 @@
         }
 
         .lang-btn {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             border: none;
-            padding: 8px 15px;
+            padding: 10px 20px;
             margin: 0 5px;
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
 
@@ -47,227 +46,138 @@
             color: white;
         }
 
-        /* Header with animated gradient */
+        /* Header */
         .header {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 15px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 50px 20px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .logo {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         .header h1 {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            font-weight: 800;
         }
 
         .tagline {
             color: #666;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .highlight {
-            color: #667eea;
-            font-weight: 600;
+            font-size: 1.2rem;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            background: white;
+            border-radius: 15px;
+            padding: 25px 20px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 0.8s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 120px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            filter: grayscale(0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
-        .product-card:hover .product-image {
-            transform: scale(1.1);
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
 
         .product-title {
             color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .product-description {
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
             line-height: 1.5;
         }
 
         .product-price {
             color: #e74c3c;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .whatsapp-btn {
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background: #25D366;
             color: white;
-            padding: 15px 35px;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
+            border-radius: 25px;
+            font-weight: bold;
             display: inline-block;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: background 0.3s ease;
         }
 
         .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            background: linear-gradient(135deg, #128C7E, #25D366);
+            background: #128C7E;
         }
 
         /* Contact Section */
         .contact-section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .contact-title {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .contact-subtitle {
-            color: #7f8c8d;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
         .footer {
             text-align: center;
             color: white;
-            margin-top: 50px;
-            padding: 30px;
-            opacity: 0.9;
+            margin-top: 30px;
+            padding: 20px;
         }
 
         .feature-badge {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            background: #e74c3c;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 5px 10px;
+            border-radius: 15px;
             font-size: 0.8rem;
-            font-weight: 600;
             position: absolute;
             top: -10px;
             right: -10px;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* RTL Support for Arabic */
-        body[dir="rtl"] {
-            font-family: 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
-        }
-
-        body[dir="rtl"] .language-switcher {
-            text-align: left;
-        }
-
-        body[dir="rtl"] .header,
-        body[dir="rtl"] .product-card,
-        body[dir="rtl"] .contact-section {
-            text-align: center;
+        .product-card {
+            position: relative;
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
             .products-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .product-card {
-                padding: 25px 20px;
             }
         }
     </style>
 </head>
-<body dir="ltr">
+<body>
     <div class="container">
         <!-- Language Switcher -->
         <div class="language-switcher">
@@ -275,100 +185,100 @@
             <button class="lang-btn" onclick="switchLanguage('ar')">AR العربية</button>
         </div>
 
-        <!-- HEADER SECTION -->
+        <!-- Header Section -->
         <header class="header">
             <div class="logo">⚡</div>
             <h1>H2 Tech</h1>
-            <p class="tagline" data-en="Premium Electronics by " data-ar="إلكترونيات مميزة من ">
-                <span class="highlight" data-en="Hamza & Houssam" data-ar="حمزة و حسام"></span>
+            <p class="tagline" data-en="Premium Electronics by Hamza & Houssam" data-ar="إلكترونيات مميزة من حمزة و حسام">
+                Premium Electronics by Hamza & Houssam
             </p>
-            <p class="tagline" data-en="Your Gadget Destination 🚀" data-ar="وجهتك للأجهزة الإلكترونية 🚀"></p>
         </header>
 
-        <!-- PRODUCTS GRID -->
+        <!-- Products Grid -->
         <div class="products-grid">
-            <!-- SMART WATCH -->
+            <!-- Smart Watch -->
             <div class="product-card">
                 <div class="feature-badge" data-en="Trending" data-ar="الأكثر طلباً">Trending</div>
                 <div class="product-image">⌚</div>
                 <h3 class="product-title" data-en="Smart Watch Pro" data-ar="ساعة ذكية برو">Smart Watch Pro</h3>
-                <p class="product-description" data-en="Track fitness, receive notifications, and stay connected with this feature-packed smartwatch. Waterproof & long battery life." data-ar="تابع لياقتك البدنية، استقبل الإشعارات، وابق متصلاً مع هذه الساعة الذكية المليئة بالمميزات. مقاومة للماء وبطارية طويلة الأمد.">Track fitness, receive notifications, and stay connected with this feature-packed smartwatch. Waterproof & long battery life.</p>
+                <p class="product-description" data-en="Track fitness, receive notifications, and stay connected. Waterproof & long battery life." data-ar="تابع لياقتك البدنية، استقبل الإشعارات، وابق متصلاً. مقاومة للماء وبطارية طويلة الأمد.">
+                    Track fitness, receive notifications, and stay connected. Waterproof & long battery life.
+                </p>
                 <div class="product-price">$129.99</div>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Smart%20Watch%20Pro" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
-            <!-- EARBUDS -->
+            <!-- Earbuds -->
             <div class="product-card">
                 <div class="feature-badge" data-en="Best Seller" data-ar="الأفضل مبيعاً">Best Seller</div>
                 <div class="product-image">🎧</div>
                 <h3 class="product-title" data-en="Wireless Earbuds" data-ar="سماعات لاسلكية">Wireless Earbuds</h3>
-                <p class="product-description" data-en="Crystal clear sound with active noise cancellation. Perfect for music, calls, and immersive audio experience." data-ar="صوت نقي واضح مع إلغاء الضوضاء النشط. مثالية للموسيقى، المكالمات، وتجربة صوتية غامرة.">Crystal clear sound with active noise cancellation. Perfect for music, calls, and immersive audio experience.</p>
+                <p class="product-description" data-en="Crystal clear sound with active noise cancellation. Perfect for music and calls." data-ar="صوت نقي واضح مع إلغاء الضوضاء النشط. مثالية للموسيقى والمكالمات.">
+                    Crystal clear sound with active noise cancellation. Perfect for music and calls.
+                </p>
                 <div class="product-price">$79.99</div>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Wireless%20Earbuds" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
-            <!-- POWER BANK -->
+            <!-- Power Bank -->
             <div class="product-card">
                 <div class="product-image">🔋</div>
-                <h3 class="product-title" data-en="Super Power Bank" data-ar="شاحن متنفسل قوي">Super Power Bank</h3>
-                <p class="product-description" data-en="20000mAh massive capacity. Fast charging for all your devices. Never run out of power again!" data-ar="سعة ضخمة 20000 مللي أمبير. شحن سريع لجميع أجهزتك. لا تنفذ الطاقة مرة أخرى!">20000mAh massive capacity. Fast charging for all your devices. Never run out of power again!</p>
+                <h3 class="product-title" data-en="Super Power Bank" data-ar="شاحن محمول قوي">Super Power Bank</h3>
+                <p class="product-description" data-en="20000mAh massive capacity. Fast charging for all your devices." data-ar="سعة ضخمة 20000 مللي أمبير. شحن سريع لجميع أجهزتك.">
+                    20000mAh massive capacity. Fast charging for all your devices.
+                </p>
                 <div class="product-price">$49.99</div>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Super%20Power%20Bank" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
-            <!-- SPEAKER -->
+            <!-- Speaker -->
             <div class="product-card">
                 <div class="feature-badge" data-en="New" data-ar="جديد">New</div>
                 <div class="product-image">🔊</div>
                 <h3 class="product-title" data-en="Bluetooth Speaker" data-ar="سماعة بلوتوث">Bluetooth Speaker</h3>
-                <p class="product-description" data-en="360° surround sound, waterproof design, and 12-hour playtime. Perfect for parties and outdoor adventures." data-ar="صوت محيط 360 درجة، تصميم مقاوم للماء، و 12 ساعة تشغيل. مثالية للحفلات والمغامرات الخارجية.">360° surround sound, waterproof design, and 12-hour playtime. Perfect for parties and outdoor adventures.</p>
+                <p class="product-description" data-en="360° surround sound, waterproof design, and 12-hour playtime." data-ar="صوت محيط 360 درجة، تصميم مقاوم للماء، و 12 ساعة تشغيل.">
+                    360° surround sound, waterproof design, and 12-hour playtime.
+                </p>
                 <div class="product-price">$89.99</div>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Bluetooth%20Speaker" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
-            <!-- HEADPHONES -->
+            <!-- Headphones -->
             <div class="product-card">
                 <div class="product-image">🎵</div>
                 <h3 class="product-title" data-en="Premium Headphones" data-ar="سماعات رأس مميزة">Premium Headphones</h3>
-                <p class="product-description" data-en="Over-ear comfort with studio-quality sound. Perfect for gaming, music production, or immersive listening." data-ar="راحة للأذن مع صوت بجودة الاستوديو. مثالية للألعاب، إنتاج الموسيقى، أو الاستماع الغامر.">Over-ear comfort with studio-quality sound. Perfect for gaming, music production, or immersive listening.</p>
+                <p class="product-description" data-en="Over-ear comfort with studio-quality sound. Perfect for gaming and music." data-ar="راحة للأذن مع صوت بجودة الاستوديو. مثالية للألعاب والموسيقى.">
+                    Over-ear comfort with studio-quality sound. Perfect for gaming and music.
+                </p>
                 <div class="product-price">$149.99</div>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Premium%20Headphones" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
-
-            <!-- COMING SOON -->
-            <div class="product-card">
-                <div class="product-image">🚀</div>
-                <h3 class="product-title" data-en="More Coming Soon!" data-ar="المزيد قريباً!">More Coming Soon!</h3>
-                <p class="product-description" data-en="We're constantly adding new tech gadgets. Follow us for updates on the latest electronics!" data-ar="نضيف باستمرار أجهزة تقنية جديدة. تابعنا للحصول على آخر التحديثات في الإلكترونيات!">We're constantly adding new tech gadgets. Follow us for updates on the latest electronics!</p>
-                <div class="product-price" data-en="Stay Tuned" data-ar="ترقبوا">Stay Tuned</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20know%20about%20upcoming%20products" class="whatsapp-btn" data-en="💬 Inquire Now" data-ar="💬 استفسر الآن">
-                    💬 Inquire Now
-                </a>
-            </div>
         </div>
 
-        <!-- CONTACT SECTION -->
+        <!-- Contact Section -->
         <div class="contact-section">
-            <h3 class="contact-title" data-en="Need Help Choosing? 🤔" data-ar="تحتاج مساعدة في الاختيار؟ 🤔">Need Help Choosing? 🤔</h3>
-            <p class="contact-subtitle" data-en="Our tech experts are here to help you find the perfect gadget!" data-ar="خبراؤنا التقنيون هنا لمساعدتك في العثور على الجهاز المثالي!">Our tech experts are here to help you find the perfect gadget!</p>
-            <a href="https://wa.me/212689622405" class="whatsapp-btn" data-en="💬 Chat with Hamza & Houssam" data-ar="💬 تحدث مع حمزة و حسام">
-                💬 Chat with Hamza & Houssam
+            <h3 class="contact-title" data-en="Need Help Choosing?" data-ar="تحتاج مساعدة في الاختيار؟">Need Help Choosing?</h3>
+            <p class="product-description" data-en="Our tech experts are here to help you find the perfect gadget!" data-ar="خبراؤنا التقنيون هنا لمساعدتك في العثور على الجهاز المثالي!">
+                Our tech experts are here to help you find the perfect gadget!
+            </p>
+            <a href="https://wa.me/212689622405" class="whatsapp-btn" data-en="💬 Chat on WhatsApp" data-ar="💬 تواصل على واتساب">
+                💬 Chat on WhatsApp
             </a>
         </div>
 
         <footer class="footer">
-            <p data-en="© 2024 H2 Tech - Premium Electronics | WhatsApp: +212 689-622405" data-ar="© 2024 H2 تك - إلكترونيات مميزة | واتساب: 622405-689-212+">© 2024 H2 Tech - Premium Electronics | WhatsApp: +212 689-622405</p>
-            <p data-en="Fast Delivery 🚚 | Quality Guaranteed ✅ | Best Prices 💰" data-ar="توصيل سريع 🚚 | جودة مضمونة ✅ | أفضل الأسعار 💰">Fast Delivery 🚚 | Quality Guaranteed ✅ | Best Prices 💰</p>
+            <p data-en="© 2024 H2 Tech - Premium Electronics" data-ar="© 2024 H2 تك - إلكترونيات مميزة">© 2024 H2 Tech - Premium Electronics</p>
+            <p>WhatsApp: +212 689-622405</p>
         </footer>
     </div>
 
@@ -380,45 +290,17 @@
             });
             event.target.classList.add('active');
             
-            // Update direction
-            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
             // Update all translatable elements
             document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
                 if (element.hasAttribute(`data-${lang}`)) {
-                    if (element.tagName === 'A') {
-                        // For links, update both text and WhatsApp message
-                        const text = element.getAttribute(`data-${lang}`);
-                        element.textContent = text;
-                        
-                        // Update WhatsApp message based on language
-                        if (element.href.includes('wa.me')) {
-                            let newHref = element.href;
-                            if (lang === 'ar') {
-                                newHref = element.href.replace('Hi%20H2%20Tech!%20I%20want%20to%20buy', 'مرحبا%20H2%20Tech!%20أريد%20شراء');
-                            } else {
-                                newHref = element.href.replace('مرحبا%20H2%20Tech!%20أريد%20شراء', 'Hi%20H2%20Tech!%20I%20want%20to%20buy');
-                            }
-                            element.href = newHref;
-                        }
-                    } else {
-                        element.textContent = element.getAttribute(`data-${lang}`);
-                    }
+                    element.textContent = element.getAttribute(`data-${lang}`);
                 }
             });
         }
-
-        // Set initial language based on user preference or default to English
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if user prefers Arabic
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.startsWith('ar')) {
-                switchLanguage('ar');
-            }
-        });
     </script>
 </body>
 </html>
+ 
   
       
     
