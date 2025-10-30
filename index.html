@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,28 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
         }
 
         /* Header with animated gradient */
@@ -214,6 +236,21 @@
             50% { transform: scale(1.05); }
         }
 
+        /* RTL Support for Arabic */
+        body[dir="rtl"] {
+            font-family: 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
+        }
+
+        body[dir="rtl"] .language-switcher {
+            text-align: left;
+        }
+
+        body[dir="rtl"] .header,
+        body[dir="rtl"] .product-card,
+        body[dir="rtl"] .contact-section {
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2rem;
@@ -230,38 +267,46 @@
         }
     </style>
 </head>
-<body>
+<body dir="ltr">
     <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('en')">EN English</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">AR العربية</button>
+        </div>
+
         <!-- HEADER SECTION -->
         <header class="header">
             <div class="logo">⚡</div>
             <h1>H2 Tech</h1>
-            <p class="tagline">Premium Electronics by <span class="highlight">Hamza & Houssam</span></p>
-            <p class="tagline">Your Gadget Destination 🚀</p>
+            <p class="tagline" data-en="Premium Electronics by " data-ar="إلكترونيات مميزة من ">
+                <span class="highlight" data-en="Hamza & Houssam" data-ar="حمزة و حسام"></span>
+            </p>
+            <p class="tagline" data-en="Your Gadget Destination 🚀" data-ar="وجهتك للأجهزة الإلكترونية 🚀"></p>
         </header>
 
         <!-- PRODUCTS GRID -->
         <div class="products-grid">
             <!-- SMART WATCH -->
             <div class="product-card">
-                <div class="feature-badge">Trending</div>
+                <div class="feature-badge" data-en="Trending" data-ar="الأكثر طلباً">Trending</div>
                 <div class="product-image">⌚</div>
-                <h3 class="product-title">Smart Watch Pro</h3>
-                <p class="product-description">Track fitness, receive notifications, and stay connected with this feature-packed smartwatch. Waterproof & long battery life.</p>
+                <h3 class="product-title" data-en="Smart Watch Pro" data-ar="ساعة ذكية برو">Smart Watch Pro</h3>
+                <p class="product-description" data-en="Track fitness, receive notifications, and stay connected with this feature-packed smartwatch. Waterproof & long battery life." data-ar="تابع لياقتك البدنية، استقبل الإشعارات، وابق متصلاً مع هذه الساعة الذكية المليئة بالمميزات. مقاومة للماء وبطارية طويلة الأمد.">Track fitness, receive notifications, and stay connected with this feature-packed smartwatch. Waterproof & long battery life.</p>
                 <div class="product-price">$129.99</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Smart%20Watch%20Pro" class="whatsapp-btn">
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Smart%20Watch%20Pro" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
             <!-- EARBUDS -->
             <div class="product-card">
-                <div class="feature-badge">Best Seller</div>
+                <div class="feature-badge" data-en="Best Seller" data-ar="الأفضل مبيعاً">Best Seller</div>
                 <div class="product-image">🎧</div>
-                <h3 class="product-title">Wireless Earbuds</h3>
-                <p class="product-description">Crystal clear sound with active noise cancellation. Perfect for music, calls, and immersive audio experience.</p>
+                <h3 class="product-title" data-en="Wireless Earbuds" data-ar="سماعات لاسلكية">Wireless Earbuds</h3>
+                <p class="product-description" data-en="Crystal clear sound with active noise cancellation. Perfect for music, calls, and immersive audio experience." data-ar="صوت نقي واضح مع إلغاء الضوضاء النشط. مثالية للموسيقى، المكالمات، وتجربة صوتية غامرة.">Crystal clear sound with active noise cancellation. Perfect for music, calls, and immersive audio experience.</p>
                 <div class="product-price">$79.99</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Wireless%20Earbuds" class="whatsapp-btn">
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Wireless%20Earbuds" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
@@ -269,22 +314,22 @@
             <!-- POWER BANK -->
             <div class="product-card">
                 <div class="product-image">🔋</div>
-                <h3 class="product-title">Super Power Bank</h3>
-                <p class="product-description">20000mAh massive capacity. Fast charging for all your devices. Never run out of power again!</p>
+                <h3 class="product-title" data-en="Super Power Bank" data-ar="شاحن متنفسل قوي">Super Power Bank</h3>
+                <p class="product-description" data-en="20000mAh massive capacity. Fast charging for all your devices. Never run out of power again!" data-ar="سعة ضخمة 20000 مللي أمبير. شحن سريع لجميع أجهزتك. لا تنفذ الطاقة مرة أخرى!">20000mAh massive capacity. Fast charging for all your devices. Never run out of power again!</p>
                 <div class="product-price">$49.99</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Super%20Power%20Bank" class="whatsapp-btn">
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Super%20Power%20Bank" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
 
             <!-- SPEAKER -->
             <div class="product-card">
-                <div class="feature-badge">New</div>
+                <div class="feature-badge" data-en="New" data-ar="جديد">New</div>
                 <div class="product-image">🔊</div>
-                <h3 class="product-title">Bluetooth Speaker</h3>
-                <p class="product-description">360° surround sound, waterproof design, and 12-hour playtime. Perfect for parties and outdoor adventures.</p>
+                <h3 class="product-title" data-en="Bluetooth Speaker" data-ar="سماعة بلوتوث">Bluetooth Speaker</h3>
+                <p class="product-description" data-en="360° surround sound, waterproof design, and 12-hour playtime. Perfect for parties and outdoor adventures." data-ar="صوت محيط 360 درجة، تصميم مقاوم للماء، و 12 ساعة تشغيل. مثالية للحفلات والمغامرات الخارجية.">360° surround sound, waterproof design, and 12-hour playtime. Perfect for parties and outdoor adventures.</p>
                 <div class="product-price">$89.99</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Bluetooth%20Speaker" class="whatsapp-btn">
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Bluetooth%20Speaker" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
@@ -292,10 +337,10 @@
             <!-- HEADPHONES -->
             <div class="product-card">
                 <div class="product-image">🎵</div>
-                <h3 class="product-title">Premium Headphones</h3>
-                <p class="product-description">Over-ear comfort with studio-quality sound. Perfect for gaming, music production, or immersive listening.</p>
+                <h3 class="product-title" data-en="Premium Headphones" data-ar="سماعات رأس مميزة">Premium Headphones</h3>
+                <p class="product-description" data-en="Over-ear comfort with studio-quality sound. Perfect for gaming, music production, or immersive listening." data-ar="راحة للأذن مع صوت بجودة الاستوديو. مثالية للألعاب، إنتاج الموسيقى، أو الاستماع الغامر.">Over-ear comfort with studio-quality sound. Perfect for gaming, music production, or immersive listening.</p>
                 <div class="product-price">$149.99</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Premium%20Headphones" class="whatsapp-btn">
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Premium%20Headphones" class="whatsapp-btn" data-en="📱 Buy Now" data-ar="📱 اشتر الآن">
                     📱 Buy Now
                 </a>
             </div>
@@ -303,10 +348,10 @@
             <!-- COMING SOON -->
             <div class="product-card">
                 <div class="product-image">🚀</div>
-                <h3 class="product-title">More Coming Soon!</h3>
-                <p class="product-description">We're constantly adding new tech gadgets. Follow us for updates on the latest electronics!</p>
-                <div class="product-price">Stay Tuned</div>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20know%20about%20upcoming%20products" class="whatsapp-btn">
+                <h3 class="product-title" data-en="More Coming Soon!" data-ar="المزيد قريباً!">More Coming Soon!</h3>
+                <p class="product-description" data-en="We're constantly adding new tech gadgets. Follow us for updates on the latest electronics!" data-ar="نضيف باستمرار أجهزة تقنية جديدة. تابعنا للحصول على آخر التحديثات في الإلكترونيات!">We're constantly adding new tech gadgets. Follow us for updates on the latest electronics!</p>
+                <div class="product-price" data-en="Stay Tuned" data-ar="ترقبوا">Stay Tuned</div>
+                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20know%20about%20upcoming%20products" class="whatsapp-btn" data-en="💬 Inquire Now" data-ar="💬 استفسر الآن">
                     💬 Inquire Now
                 </a>
             </div>
@@ -314,20 +359,66 @@
 
         <!-- CONTACT SECTION -->
         <div class="contact-section">
-            <h3 class="contact-title">Need Help Choosing? 🤔</h3>
-            <p class="contact-subtitle">Our tech experts are here to help you find the perfect gadget!</p>
-            <a href="https://wa.me/212689622405" class="whatsapp-btn">
+            <h3 class="contact-title" data-en="Need Help Choosing? 🤔" data-ar="تحتاج مساعدة في الاختيار؟ 🤔">Need Help Choosing? 🤔</h3>
+            <p class="contact-subtitle" data-en="Our tech experts are here to help you find the perfect gadget!" data-ar="خبراؤنا التقنيون هنا لمساعدتك في العثور على الجهاز المثالي!">Our tech experts are here to help you find the perfect gadget!</p>
+            <a href="https://wa.me/212689622405" class="whatsapp-btn" data-en="💬 Chat with Hamza & Houssam" data-ar="💬 تحدث مع حمزة و حسام">
                 💬 Chat with Hamza & Houssam
             </a>
         </div>
 
         <footer class="footer">
-            <p>© 2024 H2 Tech - Premium Electronics | WhatsApp: +212 689-622405</p>
-            <p>Fast Delivery 🚚 | Quality Guaranteed ✅ | Best Prices 💰</p>
+            <p data-en="© 2024 H2 Tech - Premium Electronics | WhatsApp: +212 689-622405" data-ar="© 2024 H2 تك - إلكترونيات مميزة | واتساب: 622405-689-212+">© 2024 H2 Tech - Premium Electronics | WhatsApp: +212 689-622405</p>
+            <p data-en="Fast Delivery 🚚 | Quality Guaranteed ✅ | Best Prices 💰" data-ar="توصيل سريع 🚚 | جودة مضمونة ✅ | أفضل الأسعار 💰">Fast Delivery 🚚 | Quality Guaranteed ✅ | Best Prices 💰</p>
         </footer>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update direction
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'A') {
+                        // For links, update both text and WhatsApp message
+                        const text = element.getAttribute(`data-${lang}`);
+                        element.textContent = text;
+                        
+                        // Update WhatsApp message based on language
+                        if (element.href.includes('wa.me')) {
+                            let newHref = element.href;
+                            if (lang === 'ar') {
+                                newHref = element.href.replace('Hi%20H2%20Tech!%20I%20want%20to%20buy', 'مرحبا%20H2%20Tech!%20أريد%20شراء');
+                            } else {
+                                newHref = element.href.replace('مرحبا%20H2%20Tech!%20أريد%20شراء', 'Hi%20H2%20Tech!%20I%20want%20to%20buy');
+                            }
+                            element.href = newHref;
+                        }
+                    } else {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+        }
+
+        // Set initial language based on user preference or default to English
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user prefers Arabic
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('ar')) {
+                switchLanguage('ar');
+            }
+        });
+    </script>
 </body>
 </html>
-       
+  
       
     
