@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,43 @@
             color: #333;
             min-height: 100vh;
             padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
         }
 
         .product-hero {
@@ -82,6 +114,12 @@
             margin: 25px 0;
             text-align: left;
             border-left: 5px solid #667eea;
+        }
+
+        body.rtl .creative-description {
+            text-align: right;
+            border-left: none;
+            border-right: 5px solid #667eea;
         }
 
         .creative-description h3 {
@@ -174,87 +212,162 @@
 </head>
 <body>
     <div class="container">
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ar">العربية</button>
+        </div>
+
         <div class="product-hero">
             <img src="C90.webp" alt="C90 Max Ultra Smartwatch" class="watch-image">
-            <h1 class="product-title">C90 Max Ultra</h1>
-            <p class="product-subtitle">The Future of Wearable Technology</p>
-            <div class="highlight-badge">🔥 5G CONNECTIVITY • SUPER AMOLED • ULTRA PREMIUM</div>
+            <h1 class="product-title" data-en="C90 Max Ultra" data-ar="C90 ماكس الترا">C90 Max Ultra</h1>
+            <p class="product-subtitle" data-en="The Future of Wearable Technology" data-ar="مستقبل التكنولوجيا القابلة للارتداء">The Future of Wearable Technology</p>
+            <div class="highlight-badge" data-en="🔥 5G CONNECTIVITY • SUPER AMOLED • ULTRA PREMIUM" data-ar="🔥 اتصال 5G • شاشة سوبر أموليد • فائق الجودة">🔥 5G CONNECTIVITY • SUPER AMOLED • ULTRA PREMIUM</div>
             <div class="product-price">$49.99</div>
             
             <!-- WhatsApp Contact Button -->
-            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20C90%20Max%20Ultra%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn">
+            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20C90%20Max%20Ultra%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn" data-en="💬 CONTACT ON WHATSAPP" data-ar="💬 تواصل عبر واتساب">
                 💬 CONTACT ON WHATSAPP
             </a>
         </div>
 
         <div class="creative-description">
-            <h3>🌟 Experience the Ultimate Smartwatch Revolution</h3>
-            <p>Meet the <strong>C90 Max Ultra</strong> - where cutting-edge technology meets sophisticated design. This isn't just a smartwatch; it's your personal command center, fitness coach, and style statement all wrapped into one stunning device.</p>
+            <h3 data-en="🌟 Experience the Ultimate Smartwatch Revolution" data-ar="🌟 جرب ثورة الساعات الذكية المتطورة">🌟 Experience the Ultimate Smartwatch Revolution</h3>
+            <p data-en="Meet the <strong>C90 Max Ultra</strong> - where cutting-edge technology meets sophisticated design. This isn't just a smartwatch; it's your personal command center, fitness coach, and style statement all wrapped into one stunning device." data-ar="تعرف على <strong>C90 ماكس الترا</strong> - حيث تلتقي أحدث التقنيات بالتصميم المتطور. هذه ليست مجرد ساعة ذكية؛ إنها مركز القيادة الشخصي، مدرب اللياقة البدنية، وتصريح الأناقة مجتمعة في جهاز مذهل واحد.">Meet the <strong>C90 Max Ultra</strong> - where cutting-edge technology meets sophisticated design. This isn't just a smartwatch; it's your personal command center, fitness coach, and style statement all wrapped into one stunning device.</p>
             
-            <p>With <strong>5G connectivity</strong>, experience lightning-fast responses and seamless integration with your digital life. The vibrant <strong>Super AMOLED display</strong> brings your notifications, health metrics, and entertainment to life with breathtaking clarity.</p>
+            <p data-en="With <strong>5G connectivity</strong>, experience lightning-fast responses and seamless integration with your digital life. The vibrant <strong>Super AMOLED display</strong> brings your notifications, health metrics, and entertainment to life with breathtaking clarity." data-ar="مع <strong>اتصال 5G</strong>، جرب استجابات فائقة السرعة وتكاملًا سلسًا مع حياتك الرقمية. تجعل شاشة <strong>سوبر أموليد</strong> النابضة بالحياة إشعاراتك ومقاييس صحك وترفيهك تنبض بالحياة بوضوح مذهل.">With <strong>5G connectivity</strong>, experience lightning-fast responses and seamless integration with your digital life. The vibrant <strong>Super AMOLED display</strong> brings your notifications, health metrics, and entertainment to life with breathtaking clarity.</p>
             
-            <p>From <strong>Facebook to YouTube, WhatsApp to Instagram</strong>, and everything in between - stay connected to your world without ever reaching for your phone. The C90 Max Ultra understands your lifestyle and adapts to your needs.</p>
+            <p data-en="From <strong>Facebook to YouTube, WhatsApp to Instagram</strong>, and everything in between - stay connected to your world without ever reaching for your phone. The C90 Max Ultra understands your lifestyle and adapts to your needs." data-ar="من <strong>فيسبوك إلى يوتيوب، واتساب إلى إنستغرام</strong>، وكل ما بينهما - ابق متصلاً بعالمك دون الحاجة للوصول إلى هاتفك. تفهم C90 ماكس الترا نمط حياتك وتتكيف مع احتياجاتك.">From <strong>Facebook to YouTube, WhatsApp to Instagram</strong>, and everything in between - stay connected to your world without ever reaching for your phone. The C90 Max Ultra understands your lifestyle and adapts to your needs.</p>
         </div>
 
         <div class="features-showcase">
             <div class="feature-card">
                 <div class="feature-icon">🚀</div>
-                <h4 class="feature-title">5G Ultra-Fast</h4>
-                <p>Lightning-speed connectivity for instant responses and seamless app integration</p>
+                <h4 class="feature-title" data-en="5G Ultra-Fast" data-ar="5G فائق السرعة">5G Ultra-Fast</h4>
+                <p data-en="Lightning-speed connectivity for instant responses and seamless app integration" data-ar="اتصال بسرعة البرق لاستجابات فورية وتكامل سلس للتطبيقات">Lightning-speed connectivity for instant responses and seamless app integration</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🖥️</div>
-                <h4 class="feature-title">Super AMOLED</h4>
-                <p>Crystal-clear display with vibrant colors and perfect visibility in any lighting</p>
+                <h4 class="feature-title" data-en="Super AMOLED" data-ar="سوبر أموليد">Super AMOLED</h4>
+                <p data-en="Crystal-clear display with vibrant colors and perfect visibility in any lighting" data-ar="شاشة فائقة الوضوح بألوان نابضة بالحياة ووضوح مثالي في أي إضاءة">Crystal-clear display with vibrant colors and perfect visibility in any lighting</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
-                <h4 class="feature-title">Full App Support</h4>
-                <p>Facebook, YouTube, WhatsApp, Instagram, Telegram, and all your favorite apps</p>
+                <h4 class="feature-title" data-en="Full App Support" data-ar="دعم كامل للتطبيقات">Full App Support</h4>
+                <p data-en="Facebook, YouTube, WhatsApp, Instagram, Telegram, and all your favorite apps" data-ar="فيسبوك، يوتيوب، واتساب، إنستغرام، تيليجرام، وجميع تطبيقاتك المفضلة">Facebook, YouTube, WhatsApp, Instagram, Telegram, and all your favorite apps</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">❤️</div>
-                <h4 class="feature-title">Health Master</h4>
-                <p>24/7 heart rate monitoring, sleep analysis, and comprehensive fitness tracking</p>
+                <h4 class="feature-title" data-en="Health Master" data-ar="خبير الصحة">Health Master</h4>
+                <p data-en="24/7 heart rate monitoring, sleep analysis, and comprehensive fitness tracking" data-ar="مراقبة معدل ضربات القلب على مدار الساعة، تحليل النوم، وتتبع اللياقة البدنية الشامل">24/7 heart rate monitoring, sleep analysis, and comprehensive fitness tracking</p>
             </div>
         </div>
 
         <div class="creative-description">
-            <h3>💫 Technical Excellence Meets Everyday Convenience</h3>
-            <p>The C90 Max Ultra features advanced health monitoring sensors that track your heart rate, blood oxygen levels, and sleep patterns with medical-grade precision. Its long-lasting battery ensures you stay connected throughout your busiest days.</p>
+            <h3 data-en="💫 Technical Excellence Meets Everyday Convenience" data-ar="💫 التميز التقني يلتقي براحة الاستخدام اليومي">💫 Technical Excellence Meets Everyday Convenience</h3>
+            <p data-en="The C90 Max Ultra features advanced health monitoring sensors that track your heart rate, blood oxygen levels, and sleep patterns with medical-grade precision. Its long-lasting battery ensures you stay connected throughout your busiest days." data-ar="تتميز C90 ماكس الترا بأجهزة استشعار متطورة لمراقبة الصحة تتعقب معدل ضربات القلب، مستويات الأكسجين في الدم، وأنماط النوم بدقة طبية. تضمن بطاريتها طويلة الأمد بقاءك متصلاً خلال أكثر أيامك انشغالاً.">The C90 Max Ultra features advanced health monitoring sensors that track your heart rate, blood oxygen levels, and sleep patterns with medical-grade precision. Its long-lasting battery ensures you stay connected throughout your busiest days.</p>
             
-            <p>With built-in support for all major social platforms and messaging apps, you'll never miss an important notification. The sleek, premium design complements any style, while the durable construction stands up to your active lifestyle.</p>
+            <p data-en="With built-in support for all major social platforms and messaging apps, you'll never miss an important notification. The sleek, premium design complements any style, while the durable construction stands up to your active lifestyle." data-ar="مع دعم مدمج لجميع منصات التواصل الاجتماعي الرئيسية وتطبيقات المراسلة، لن تفوتك أبدًا أي إشعار مهم. يكمل التصميم الأنيق والفاخر أي نمط، بينما يتحمل البناء المتين نمط حياتك النشط.">With built-in support for all major social platforms and messaging apps, you'll never miss an important notification. The sleek, premium design complements any style, while the durable construction stands up to your active lifestyle.</p>
         </div>
 
         <div class="specs-grid">
             <div class="spec-item">
-                <strong>📡 Connectivity</strong><br>5G + Bluetooth 5.2
+                <strong data-en="📡 Connectivity" data-ar="📡 الاتصال">📡 Connectivity</strong><br><span data-en="5G + Bluetooth 5.2" data-ar="5G + بلوتوث 5.2">5G + Bluetooth 5.2</span>
             </div>
             <div class="spec-item">
-                <strong>🖥️ Display</strong><br>2.1" Super AMOLED
+                <strong data-en="🖥️ Display" data-ar="🖥️ الشاشة">🖥️ Display</strong><br><span data-en="2.1\" Super AMOLED" data-ar="2.1 بوصة سوبر أموليد">2.1" Super AMOLED</span>
             </div>
             <div class="spec-item">
-                <strong>🔋 Battery</strong><br>7-10 Days
+                <strong data-en="🔋 Battery" data-ar="🔋 البطارية">🔋 Battery</strong><br><span data-en="7-10 Days" data-ar="7-10 أيام">7-10 Days</span>
             </div>
             <div class="spec-item">
-                <strong>💧 Rating</strong><br>IP68 Waterproof
+                <strong data-en="💧 Rating" data-ar="💧 التصنيف">💧 Rating</strong><br><span data-en="IP68 Waterproof" data-ar="مقاوم للماء IP68">IP68 Waterproof</span>
             </div>
             <div class="spec-item">
-                <strong>❤️ Health</strong><br>HR, SpO2, Sleep
+                <strong data-en="❤️ Health" data-ar="❤️ الصحة">❤️ Health</strong><br><span data-en="HR, SpO2, Sleep" data-ar="معدل ضربات القلب، تشبع الأكسجين، النوم">HR, SpO2, Sleep</span>
             </div>
             <div class="spec-item">
-                <strong>📱 Apps</strong><br>All Social Media
+                <strong data-en="📱 Apps" data-ar="📱 التطبيقات">📱 Apps</strong><br><span data-en="All Social Media" data-ar="جميع وسائل التواصل">All Social Media</span>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="smartwatches-category.html" class="back-btn">← Back to Smartwatches</a>
-            <a href="index.html" class="back-btn">🏠 Back to Store</a>
+            <a href="smartwatches-category.html" class="back-btn" data-en="← Back to Smartwatches" data-ar="← العودة للساعات الذكية">← Back to Smartwatches</a>
+            <a href="index.html" class="back-btn" data-en="🏠 Back to Store" data-ar="🏠 العودة للمتجر">🏠 Back to Store</a>
             <!-- Second WhatsApp Button -->
-            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20C90%20Max%20Ultra%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn">
+            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20C90%20Max%20Ultra%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn" data-en="💬 CONTACT ON WHATSAPP" data-ar="💬 تواصل عبر واتساب">
                 💬 CONTACT ON WHATSAPP
             </a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const elementsToTranslate = document.querySelectorAll('[data-en], [data-ar]');
+            
+            // Function to switch language
+            function switchLanguage(lang) {
+                // Update button states
+                langButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Update text content for all translatable elements
+                elementsToTranslate.forEach(element => {
+                    if (element.hasAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+                
+                // Update HTML direction and body class for RTL support
+                if (lang === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.lang = 'ar';
+                    document.body.classList.add('rtl');
+                } else {
+                    document.documentElement.dir = 'ltr';
+                    document.documentElement.lang = 'en';
+                    document.body.classList.remove('rtl');
+                }
+                
+                // Update WhatsApp message based on language
+                const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+                const message = lang === 'ar' 
+                    ? 'مرحبًا H2 Tech! أنا مهتم بـ C90 ماكس الترا. يرجى تقديم المزيد من التفاصيل والأسعار.' 
+                    : 'Hi%20H2%20Tech!%20I%27m%20interested%20in%20the%20C90%20Max%20Ultra%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing.';
+                
+                whatsappButtons.forEach(btn => {
+                    btn.href = `https://wa.me/212689622405?text=${message}`;
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferred-language', lang);
+            }
+            
+            // Add click event listeners to language buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    switchLanguage(selectedLang);
+                });
+            });
+            
+            // Check for saved language preference or use browser language
+            const savedLang = localStorage.getItem('preferred-language');
+            const browserLang = navigator.language.startsWith('ar') ? 'ar' : 'en';
+            const initialLang = savedLang || browserLang;
+            
+            // Initialize with the preferred language
+            switchLanguage(initialLang);
+        });
+    </script>
 </body>
 </html>
