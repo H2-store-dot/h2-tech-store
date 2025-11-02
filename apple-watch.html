@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,43 @@
             color: #333;
             min-height: 100vh;
             padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
         }
 
         .product-header {
@@ -83,6 +115,11 @@
             display: inline-block;
             font-size: 1.1rem;
             margin: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
         }
 
         .back-btn {
@@ -94,68 +131,164 @@
             font-weight: bold;
             display: inline-block;
             margin: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #5a6268;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        body.rtl ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ar">العربية</button>
+        </div>
+
         <div class="product-header">
             <div class="product-image">📱</div>
-            <h1 class="product-title">Apple Watch Series</h1>
-            <div class="product-price">$299.99</div>
-            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20Apple%20Watch%20Series.%20Please%20provide%20more%20details." class="whatsapp-btn">
+            <h1 class="product-title" data-en="Apple Watch Series" data-ar="ساعة أبل الذكية">Apple Watch Series</h1>
+            <div class="product-price">349 MAD</div>
+            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20Apple%20Watch%20Series.%20Please%20provide%20more%20details." class="whatsapp-btn" data-en="💬 Contact on WhatsApp" data-ar="💬 تواصل عبر واتساب">
                 💬 Contact on WhatsApp
             </a>
         </div>
 
         <div class="product-details">
-            <h2>Premium Features</h2>
+            <h2 data-en="Premium Features" data-ar="الميزات المميزة">Premium Features</h2>
             <div class="features-grid">
                 <div class="feature">
-                    <strong>🖥️ Display</strong><br>
-                    Retina Always-On
+                    <strong data-en="🖥️ Display" data-ar="🖥️ الشاشة">🖥️ Display</strong><br>
+                    <span data-en="Retina Always-On" data-ar="شاشة ريتينا دائمة الإضاءة">Retina Always-On</span>
                 </div>
                 <div class="feature">
-                    <strong>❤️ Health</strong><br>
-                    ECG & Blood Oxygen
+                    <strong data-en="❤️ Health" data-ar="❤️ الصحة">❤️ Health</strong><br>
+                    <span data-en="ECG & Blood Oxygen" data-ar="تخطيط القلب ومستوى الأكسجين">ECG & Blood Oxygen</span>
                 </div>
                 <div class="feature">
-                    <strong>📞 Calls</strong><br>
-                    Cellular Version Available
+                    <strong data-en="📞 Calls" data-ar="📞 المكالمات">📞 Calls</strong><br>
+                    <span data-en="Cellular Version Available" data-ar="نسخة خلوية متاحة">Cellular Version Available</span>
                 </div>
                 <div class="feature">
-                    <strong>⚡ Performance</strong><br>
-                    S8 Chip
+                    <strong data-en="⚡ Performance" data-ar="⚡ الأداء">⚡ Performance</strong><br>
+                    <span data-en="S8 Chip" data-ar="شريحة S8">S8 Chip</span>
                 </div>
                 <div class="feature">
-                    <strong>💧 Protection</strong><br>
-                    Water Resistant 50m
+                    <strong data-en="💧 Protection" data-ar="💧 الحماية">💧 Protection</strong><br>
+                    <span data-en="Water Resistant 50m" data-ar="مقاومة للماء حتى 50 متر">Water Resistant 50m</span>
                 </div>
                 <div class="feature">
-                    <strong>🔋 Battery</strong><br>
-                    18 Hours
+                    <strong data-en="🔋 Battery" data-ar="🔋 البطارية">🔋 Battery</strong><br>
+                    <span data-en="18 Hours" data-ar="18 ساعة">18 Hours</span>
                 </div>
             </div>
 
-            <h3>Key Features:</h3>
+            <h3 data-en="Key Features:" data-ar="الميزات الرئيسية:">Key Features:</h3>
             <ul>
-                <li>Always-On Retina display</li>
-                <li>Advanced health monitoring with ECG app</li>
-                <li>Blood oxygen sensor</li>
-                <li>High and low heart rate notifications</li>
-                <li>Fall detection and emergency SOS</li>
-                <li>GPS + Cellular options available</li>
-                <li>Swimproof design (WR50)</li>
-                <li>Track your workouts with the Workout app</li>
-                <li>Listen to music and podcasts</li>
-                <li>Stay connected with calls and messages</li>
+                <li data-en="Always-On Retina display" data-ar="شاشة ريتينا دائمة الإضاءة">Always-On Retina display</li>
+                <li data-en="Advanced health monitoring with ECG app" data-ar="مراقبة صحية متقدمة مع تطبيق تخطيط القلب">Advanced health monitoring with ECG app</li>
+                <li data-en="Blood oxygen sensor" data-ar="مستشعر مستوى الأكسجين في الدم">Blood oxygen sensor</li>
+                <li data-en="High and low heart rate notifications" data-ar="إشعارات ارتفاع وانخفاض معدل ضربات القلب">High and low heart rate notifications</li>
+                <li data-en="Fall detection and emergency SOS" data-ar="كشف السقوط وطلب المساعدة في حالات الطوارئ">Fall detection and emergency SOS</li>
+                <li data-en="GPS + Cellular options available" data-ar="خيارات GPS + الخلوية متاحة">GPS + Cellular options available</li>
+                <li data-en="Swimproof design (WR50)" data-ar="تصميم مقاوم للسباحة (WR50)">Swimproof design (WR50)</li>
+                <li data-en="Track your workouts with the Workout app" data-ar="تتبع تمارينك مع تطبيق التمرين">Track your workouts with the Workout app</li>
+                <li data-en="Listen to music and podcasts" data-ar="استمع إلى الموسيقى والبودكاست">Listen to music and podcasts</li>
+                <li data-en="Stay connected with calls and messages" data-ar="ابق متصلاً بالمكالمات والرسائل">Stay connected with calls and messages</li>
             </ul>
         </div>
 
         <div style="text-align: center;">
-            <a href="smartwatches-category.html" class="back-btn">← Back to Smartwatches</a>
-            <a href="index.html" class="back-btn">🏠 Back to Store</a>
+            <a href="smartwatches-category.html" class="back-btn" data-en="← Back to Smartwatches" data-ar="← العودة للساعات الذكية">← Back to Smartwatches</a>
+            <a href="index.html" class="back-btn" data-en="🏠 Back to Store" data-ar="🏠 العودة للمتجر">🏠 Back to Store</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const elementsToTranslate = document.querySelectorAll('[data-en], [data-ar]');
+            
+            // Function to switch language
+            function switchLanguage(lang) {
+                // Update button states
+                langButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Update text content for all translatable elements
+                elementsToTranslate.forEach(element => {
+                    if (element.hasAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+                
+                // Update HTML direction and body class for RTL support
+                if (lang === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.lang = 'ar';
+                    document.body.classList.add('rtl');
+                } else {
+                    document.documentElement.dir = 'ltr';
+                    document.documentElement.lang = 'en';
+                    document.body.classList.remove('rtl');
+                }
+                
+                // Update WhatsApp message based on language
+                const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+                const message = lang === 'ar' 
+                    ? 'مرحبًا H2 Tech! أنا مهتم بساعة أبل الذكية. يرجى تقديم المزيد من التفاصيل.' 
+                    : 'Hi%20H2%20Tech!%20I%27m%20interested%20in%20the%20Apple%20Watch%20Series.%20Please%20provide%20more%20details.';
+                
+                whatsappButtons.forEach(btn => {
+                    btn.href = `https://wa.me/212689622405?text=${message}`;
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferred-language', lang);
+            }
+            
+            // Add click event listeners to language buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    switchLanguage(selectedLang);
+                });
+            });
+            
+            // Check for saved language preference or use browser language
+            const savedLang = localStorage.getItem('preferred-language');
+            const browserLang = navigator.language.startsWith('ar') ? 'ar' : 'en';
+            const initialLang = savedLang || browserLang;
+            
+            // Initialize with the preferred language
+            switchLanguage(initialLang);
+        });
+    </script>
 </body>
 </html>
