@@ -65,9 +65,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
+        .product-image-container {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px auto;
+        }
+
         .product-image {
-            font-size: 5rem;
-            margin-bottom: 20px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .product-title {
@@ -163,7 +171,11 @@
         </div>
 
         <div class="product-header">
-            <div class="product-image">📱</div>
+            <!-- Apple Watch Image Container -->
+            <div class="product-image-container">
+                <img src="applewatch.jpg" alt="Apple Watch Series" class="product-image">
+            </div>
+            
             <h1 class="product-title" data-en="Apple Watch Series" data-ar="ساعة أبل الذكية">Apple Watch Series</h1>
             <div class="product-price">349 MAD</div>
             <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20Apple%20Watch%20Series.%20Please%20provide%20more%20details." class="whatsapp-btn" data-en="💬 Contact on WhatsApp" data-ar="💬 تواصل عبر واتساب">
