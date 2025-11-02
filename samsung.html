@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy 7 Smartwatch - H2 Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
+        }
+
+        .product-hero {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .watch-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .product-title {
+            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #1428a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-subtitle {
+            color: #666;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .product-price {
+            color: #e74c3c;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .highlight-badge {
+            background: linear-gradient(135deg, #1428a0, #667eea);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .creative-description {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: left;
+            border-left: 5px solid #1428a0;
+        }
+
+        body.rtl .creative-description {
+            text-align: right;
+            border-left: none;
+            border-right: 5px solid #1428a0;
+        }
+
+        .creative-description h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .creative-description p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin: 20px 10px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ar">العربية</button>
+        </div>
+
+        <div class="product-hero">
+            <img src="samsung.jpg" alt="Samsung Galaxy 7 Smartwatch" class="watch-image">
+            <h1 class="product-title" data-en="Samsung Galaxy 7" data-ar="سامسونج جالكسي 7">Samsung Galaxy 7</h1>
+            <p class="product-subtitle" data-en="The Ultimate Android Smartwatch Experience" data-ar="تجربة الساعة الذكية الأفضل لنظام أندرويد">The Ultimate Android Smartwatch Experience</p>
+            <div class="highlight-badge" data-en="🔥 ROTATING BEZEL • SUPER AMOLED • 3-DAY BATTERY" data-ar="🔥 إطار دوار • شاشة سوبر أموليد • بطارية 3 أيام">🔥 ROTATING BEZEL • SUPER AMOLED • 3-DAY BATTERY</div>
+            <div class="product-price">479 MAD</div>
+            
+            <!-- WhatsApp Contact Button -->
+            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20Samsung%20Galaxy%207%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn" data-en="💬 CONTACT ON WHATSAPP" data-ar="💬 تواصل عبر واتساب">
+                💬 CONTACT ON WHATSAPP
+            </a>
+        </div>
+
+        <div class="creative-description">
+            <h3 data-en="🌟 Experience Samsung's Premium Smartwatch Innovation" data-ar="🌟 جرب ابتكار سامسونج المتميز في الساعات الذكية">🌟 Experience Samsung's Premium Smartwatch Innovation</h3>
+            <p data-en="Meet the <strong>Samsung Galaxy 7</strong> - where iconic rotating bezel meets cutting-edge technology. This isn't just a smartwatch; it's your fitness partner, productivity tool, and style statement powered by Wear OS." data-ar="تعرف على <strong>سامسونج جالكسي 7</strong> - حيث يلتقي الإطار الدوار الأيقوني بأحدث التقنيات. هذه ليست مجرد ساعة ذكية؛ إنها شريكك في اللياقة، أداة الإنتاجية، وتصريح الأناقة مدعوم بنظام Wear OS.">Meet the <strong>Samsung Galaxy 7</strong> - where iconic rotating bezel meets cutting-edge technology. This isn't just a smartwatch; it's your fitness partner, productivity tool, and style statement powered by Wear OS.</p>
+            
+            <p data-en="With the <strong>revolutionary rotating bezel</strong>, navigate through apps and notifications with intuitive physical control. The vibrant <strong>Super AMOLED display</strong> delivers stunning visuals that are perfectly visible even under direct sunlight." data-ar="مع <strong>الإطار الدوار الثوري</strong>، انتقل بين التطبيقات والإشعارات بتحكم فيزيائي بديهي. تقدم شاشة <strong>سوبر أموليد</strong> النابضة بالحياة صورًا مذهلة مرئية تمامًا حتى تحت ضوء الشمس المباشر.">With the <strong>revolutionary rotating bezel</strong>, navigate through apps and notifications with intuitive physical control. The vibrant <strong>Super AMOLED display</strong> delivers stunning visuals that are perfectly visible even under direct sunlight.</p>
+            
+            <p data-en="From <strong>advanced health tracking to seamless smartphone integration</strong>, the Galaxy 7 understands your active lifestyle. With 3-day battery life, stay connected through your longest days without worrying about charging." data-ar="من <strong>تتبع الصحة المتقدم إلى التكامل السلس مع الهاتف الذكي</strong>، تفهم جالكسي 7 نمط حياتك النشط. مع عمر بطارية 3 أيام، ابق متصلاً خلال أطول أيامك دون القلق من الشحن.">From <strong>advanced health tracking to seamless smartphone integration</strong>, the Galaxy 7 understands your active lifestyle. With 3-day battery life, stay connected through your longest days without worrying about charging.</p>
+        </div>
+
+        <div class="features-showcase">
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h4 class="feature-title" data-en="Rotating Bezel" data-ar="الإطار الدوار">Rotating Bezel</h4>
+                <p data-en="Iconic physical rotating bezel for intuitive navigation and control" data-ar="إطار دوار فيزيائي أيقوني للتنقل والتحكم البديهي">Iconic physical rotating bezel for intuitive navigation and control</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🖥️</div>
+                <h4 class="feature-title" data-en="Super AMOLED" data-ar="سوبر أموليد">Super AMOLED</h4>
+                <p data-en="Vibrant always-on display with perfect outdoor visibility" data-ar="شاشة نابضة بالحياة دائمة الإضاءة مع وضوح مثالي في الخارج">Vibrant always-on display with perfect outdoor visibility</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h4 class="feature-title" data-en="3-Day Battery" data-ar="بطارية 3 أيام">3-Day Battery</h4>
+                <p data-en="Long-lasting battery that keeps up with your active lifestyle" data-ar="بطارية طويلة الأمد تواكب نمط حياتك النشط">Long-lasting battery that keeps up with your active lifestyle</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h4 class="feature-title" data-en="Health Suite" data-ar="مجموعة الصحة">Health Suite</h4>
+                <p data-en="Comprehensive health monitoring with ECG and blood pressure" data-ar="مراقبة صحية شاملة مع تخطيط القلب وضغط الدم">Comprehensive health monitoring with ECG and blood pressure</p>
+            </div>
+        </div>
+
+        <div class="creative-description">
+            <h3 data-en="💫 Advanced Technology for Modern Living" data-ar="💫 تكنولوجيا متطورة للحياة العصرية">💫 Advanced Technology for Modern Living</h3>
+            <p data-en="The Samsung Galaxy 7 features advanced bioactive sensors that provide medical-grade health insights. Track your heart rate, blood pressure, ECG, and even detect falls with incredible accuracy." data-ar="تتميز سامسونج جالكسي 7 بأجهزة استشعار حيوية متطورة توفر رؤى صحية بجودة طبية. تتبع معدل ضربات القلب، ضغط الدم، تخطيط القلب، وحتى اكتشاف السقوط بدقة مذهلة.">The Samsung Galaxy 7 features advanced bioactive sensors that provide medical-grade health insights. Track your heart rate, blood pressure, ECG, and even detect falls with incredible accuracy.</p>
+            
+            <p data-en="With built-in GPS and LTE options, leave your phone behind during workouts while staying connected. The military-grade durability ensures your watch can handle any adventure, from swimming to hiking." data-ar="مع خيارات GPS و LTE المدمجة، اترك هاتفك خلفك أثناء التمارين مع البقاء متصلاً. تضمن المتانة ذات الدرجة العسكرية أن ساعتك تتحمل أي مغامرة، من السباحة إلى المشي لمسافات طويلة.">With built-in GPS and LTE options, leave your phone behind during workouts while staying connected. The military-grade durability ensures your watch can handle any adventure, from swimming to hiking.</p>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-item">
+                <strong data-en="📡 Connectivity" data-ar="📡 الاتصال">📡 Connectivity</strong><br><span data-en="Bluetooth 5.2 + WiFi + LTE" data-ar="بلوتوث 5.2 + واي فاي + LTE">Bluetooth 5.2 + WiFi + LTE</span>
+            </div>
+            <div class="spec-item">
+                <strong data-en="🖥️ Display" data-ar="🖥️ الشاشة">🖥️ Display</strong><br><span data-en="1.4\" Super AMOLED" data-ar="1.4 بوصة سوبر أموليد">1.4" Super AMOLED</span>
+            </div>
+            <div class="spec-item">
+                <strong data-en="🔋 Battery" data-ar="🔋 البطارية">🔋 Battery</strong><br><span data-en="Up to 3 Days" data-ar="حتى 3 أيام">Up to 3 Days</span>
+            </div>
+            <div class="spec-item">
+                <strong data-en="💧 Rating" data-ar="💧 التصنيف">💧 Rating</strong><br><span data-en="5ATM + IP68" data-ar="5ATM + IP68">5ATM + IP68</span>
+            </div>
+            <div class="spec-item">
+                <strong data-en="❤️ Health" data-ar="❤️ الصحة">❤️ Health</strong><br><span data-en="ECG, BP, Sleep, HR" data-ar="تخطيط القلب، ضغط الدم، النوم، معدل ضربات القلب">ECG, BP, Sleep, HR</span>
+            </div>
+            <div class="spec-item">
+                <strong data-en="⚙️ OS" data-ar="⚙️ النظام">⚙️ OS</strong><br><span data-en="Wear OS Powered" data-ar="مدعوم بنظام Wear OS">Wear OS Powered</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="smartwatches-category.html" class="back-btn" data-en="← Back to Smartwatches" data-ar="← العودة للساعات الذكية">← Back to Smartwatches</a>
+            <a href="index.html" class="back-btn" data-en="🏠 Back to Store" data-ar="🏠 العودة للمتجر">🏠 Back to Store</a>
+            <!-- Second WhatsApp Button -->
+            <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I'm%20interested%20in%20the%20Samsung%20Galaxy%207%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing." class="whatsapp-btn" data-en="💬 CONTACT ON WHATSAPP" data-ar="💬 تواصل عبر واتساب">
+                💬 CONTACT ON WHATSAPP
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const elementsToTranslate = document.querySelectorAll('[data-en], [data-ar]');
+            
+            // Function to switch language
+            function switchLanguage(lang) {
+                // Update button states
+                langButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Update text content for all translatable elements
+                elementsToTranslate.forEach(element => {
+                    if (element.hasAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+                
+                // Update HTML direction and body class for RTL support
+                if (lang === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.lang = 'ar';
+                    document.body.classList.add('rtl');
+                } else {
+                    document.documentElement.dir = 'ltr';
+                    document.documentElement.lang = 'en';
+                    document.body.classList.remove('rtl');
+                }
+                
+                // Update WhatsApp message based on language
+                const whatsappButtons = document.querySelectorAll('.whatsapp-btn');
+                const message = lang === 'ar' 
+                    ? 'مرحبًا H2 Tech! أنا مهتم بساعة سامسونج جالكسي 7 الذكية. يرجى تقديم المزيد من التفاصيل والأسعار.' 
+                    : 'Hi%20H2%20Tech!%20I%27m%20interested%20in%20the%20Samsung%20Galaxy%207%20Smartwatch.%20Please%20provide%20more%20details%20and%20pricing.';
+                
+                whatsappButtons.forEach(btn => {
+                    btn.href = `https://wa.me/212689622405?text=${message}`;
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferred-language', lang);
+            }
+            
+            // Add click event listeners to language buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    switchLanguage(selectedLang);
+                });
+            });
+            
+            // Check for saved language preference or use browser language
+            const savedLang = localStorage.getItem('preferred-language');
+            const browserLang = navigator.language.startsWith('ar') ? 'ar' : 'en';
+            const initialLang = savedLang || browserLang;
+            
+            // Initialize with the preferred language
+            switchLanguage(initialLang);
+        });
+    </script>
+</body>
+</html>
