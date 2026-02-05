@@ -24,7 +24,7 @@
             margin: 0 auto;
         }
 
-        /* Language Switcher */
+        /* Language Switcher & Navigation */
         .language-switcher {
             display: flex;
             justify-content: space-between;
@@ -32,7 +32,7 @@
             margin-bottom: 20px;
         }
 
-        .lang-btn, .about-toggle-btn {
+        .lang-btn, .about-link-btn {
             background: white;
             border: none;
             padding: 10px 20px;
@@ -42,6 +42,9 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none; /* For the link */
+            display: inline-block;
+            color: #333;
         }
 
         .lang-btn.active {
@@ -49,12 +52,12 @@
             color: white;
         }
 
-        .about-toggle-btn {
+        .about-link-btn {
             background: #2c3e50;
             color: white;
         }
 
-        .about-toggle-btn:hover {
+        .about-link-btn:hover {
             background: #34495e;
         }
 
@@ -82,22 +85,6 @@
         .tagline {
             color: #666;
             font-size: 1.2rem;
-        }
-
-        /* About Us Section (New) */
-        #about-section {
-            display: none; /* Hidden by default */
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Products Grid */
@@ -199,7 +186,7 @@
     <div class="container">
         <div class="language-switcher">
             <div>
-                <button class="about-toggle-btn" onclick="toggleAbout()" data-en="ℹ️ About Us" data-ar="ℹ️ من نحن">ℹ️ About Us</button>
+                <a href="about.html" class="about-link-btn" data-en="ℹ️ About Us" data-ar="ℹ️ من نحن">ℹ️ About Us</a>
             </div>
             <div>
                 <button class="lang-btn active" onclick="switchLanguage('en')">EN English</button>
@@ -214,15 +201,6 @@
                 Premium Electronics by H&H
             </p>
         </header>
-
-        <section id="about-section">
-            <h2 class="contact-title" data-en="About H2 Tech" data-ar="حول H2 تك">About H2 Tech</h2>
-            <p class="product-description" 
-               data-en="H2 Tech is your premier destination for high-quality electronics. Founded by H&H, we strive to bring the latest technology, from smartwatches to audio gear, directly to your doorstep with a focus on quality and customer satisfaction." 
-               data-ar="H2 تك هي وجهتكم الأولى للإلكترونيات عالية الجودة. تأسست بواسطة H&H، ونحن نسعى جاهدين لتقديم أحدث التقنيات، من الساعات الذكية إلى الأجهزة الصوتية، مباشرة إلى باب منزلك مع التركيز على الجودة ورضا العملاء.">
-               H2 Tech is your premier destination for high-quality electronics. Founded by H&H, we strive to bring the latest technology, from smartwatches to audio gear, directly to your doorstep with a focus on quality and customer satisfaction.
-            </p>
-        </section>
 
         <div class="products-grid">
             <div class="product-card">
@@ -317,16 +295,6 @@
 
             // Adjust text direction for Arabic
             document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
-        }
-
-        function toggleAbout() {
-            const aboutSection = document.getElementById('about-section');
-            if (aboutSection.style.display === 'block') {
-                aboutSection.style.display = 'none';
-            } else {
-                aboutSection.style.display = 'block';
-                aboutSection.scrollIntoView({ behavior: 'smooth' });
-            }
         }
     </script>
 </body>
