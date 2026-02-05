@@ -21,7 +21,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .lang-btn.active { background: #2c3e50; color: white; }
-        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -30,12 +29,6 @@
         .product-card {
             background: white; padding: 25px; border-radius: 15px; 
             text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover { transform: translateY(-5px); }
-        .upcoming-card {
-            background: rgba(255, 255, 255, 0.7);
-            border: 2px dashed #fff;
         }
         .watch-icon { font-size: 4rem; margin-bottom: 15px; }
         .product-title { color: #2c3e50; font-size: 1.4rem; margin-bottom: 20px; font-weight: bold; }
@@ -43,10 +36,9 @@
             background: #764ba2; color: white; padding: 12px 25px; 
             text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; 
         }
-        .coming-soon-badge {
-            background: #f1c40f; color: #2c3e50; padding: 5px 15px;
-            border-radius: 15px; font-size: 0.8rem; font-weight: bold;
-            display: inline-block; margin-bottom: 10px;
+        .upcoming-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px dashed #fff;
         }
     </style>
 </head>
@@ -64,26 +56,25 @@
             <div class="product-card">
                 <div class="watch-icon">⌚</div>
                 <h3 class="product-title" data-en="Apple Watch" data-ar="ساعة آبل">Apple Watch</h3>
-                <a href="apple-watch.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
+                <a href="apple.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
             </div>
 
             <div class="product-card">
                 <div class="watch-icon">⌚</div>
                 <h3 class="product-title" data-en="C90 Max Ultra" data-ar="ساعة C90 ماكس الترا">C90 Max Ultra</h3>
-                <a href="c90-max.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
+                <a href="C90-max-ultra.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
             </div>
 
             <div class="product-card">
                 <div class="watch-icon">⌚</div>
                 <h3 class="product-title" data-en="Samsung Watch" data-ar="ساعة سامسونج">Samsung Watch</h3>
-                <a href="samsung-watch.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
+                <a href="samsung.html" class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</a>
             </div>
 
             <div class="product-card upcoming-card">
-                <div class="coming-soon-badge" data-en="Coming Soon" data-ar="قريباً">Coming Soon</div>
                 <div class="watch-icon" style="opacity: 0.5;">⌚</div>
-                <h3 class="product-title" data-en="New Models" data-ar="موديلات جديدة">New Models</h3>
-                <a href="https://wa.me/212689622405?text=Notify%20me%20about%20new%20watches" class="view-details-btn" style="background: #3498db;" data-en="Get Notified" data-ar="أعلمني عند الوصول">Get Notified</a>
+                <h3 class="product-title" data-en="Coming Soon" data-ar="قريباً">Coming Soon</h3>
+                <a href="#" class="view-details-btn" style="background: #ccc;" data-en="Stay Tuned" data-ar="انتظرونا">Stay Tuned</a>
             </div>
         </div>
     </div>
