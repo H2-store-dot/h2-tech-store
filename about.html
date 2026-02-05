@@ -13,7 +13,6 @@
             color: #333;
             min-height: 100vh;
             padding: 20px;
-            transition: direction 0.3s ease;
         }
 
         .container { max-width: 800px; margin: 0 auto; }
@@ -26,32 +25,17 @@
             margin-bottom: 20px;
         }
 
-        .back-btn {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: background 0.3s;
-        }
-
-        .back-btn:hover {
-            background: rgba(255,255,255,0.4);
-        }
-
-        /* Language Switcher */
-        .lang-btn {
+        .back-btn, .lang-btn {
             background: white;
             border: none;
             padding: 10px 20px;
-            margin-left: 5px;
             border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
         }
 
         .lang-btn.active {
@@ -73,29 +57,11 @@
             margin-bottom: 20px; 
             border-bottom: 2px solid #667eea; 
             padding-bottom: 10px; 
-            font-size: 2.5rem;
         }
 
         h2 { color: #764ba2; margin-top: 25px; margin-bottom: 10px; }
-        
-        p { 
-            margin-bottom: 15px; 
-            font-size: 1.1rem; 
-            color: #555; 
-        }
-
-        .footer { 
-            text-align: center; 
-            color: white; 
-            margin-top: 30px; 
-            padding-bottom: 20px;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 600px) {
-            .nav-bar { flex-direction: column; gap: 15px; }
-            .content-card { padding: 25px; }
-        }
+        p { margin-bottom: 15px; font-size: 1.1rem; color: #555; }
+        .footer { text-align: center; color: white; margin-top: 30px; }
     </style>
 </head>
 <body>
@@ -111,48 +77,36 @@
         <div class="content-card">
             <h1 data-en="About H2 Tech" data-ar="حول H2 تك">About H2 Tech</h1>
             
-            <p data-en="Welcome to H2 Tech, your premier destination for high-quality electronics in Morocco. Founded by H&H, our mission is to provide the latest technology with a focus on reliability and customer service." 
-               data-ar="مرحباً بكم في H2 تك، وجهتكم الأولى للإلكترونيات عالية الجودة في المغرب. تأسست بواسطة H&H، ومهمتنا هي تقديم أحدث التقنيات مع التركيز على الموثوقية وخدمة العملاء.">
-               Welcome to H2 Tech, your premier destination for high-quality electronics in Morocco. Founded by H&H, our mission is to provide the latest technology with a focus on reliability and customer service.
+            <p data-en="Welcome to H2 Tech, your premier destination for high-quality electronics in Morocco. Founded by H&H, our mission is to provide the latest technology." 
+               data-ar="مرحباً بكم في H2 تك، وجهتكم الأولى للإلكترونيات عالية الجودة في المغرب. تأسست بواسطة H&H، ومهمتنا هي تقديم أحدث التقنيات.">
+               Welcome to H2 Tech, your premier destination for high-quality electronics in Morocco. Founded by H&H, our mission is to provide the latest technology.
             </p>
 
             <h2 data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h2>
-            <p data-en="We believe that premium tech should be accessible to everyone. We carefully select every smartwatch, earbud, and accessory to ensure it meets our strict quality standards."
-               data-ar="نحن نؤمن بأن التقنية المميزة يجب أن تكون في متناول الجميع. نحن نختار بعناية كل ساعة ذكية، سماعة، وإكسسوار لضمان مطابقتها لمعايير الجودة الصارمة لدينا.">
-               We believe that premium tech should be accessible to everyone. We carefully select every smartwatch, earbud, and accessory to ensure it meets our strict quality standards.
-            </p>
-
-            <h2 data-en="Why Choose Us?" data-ar="لماذا تختارنا؟">Why Choose Us?</h2>
-            <p data-en="At H2 Tech, we don't just sell products; we provide solutions. With fast communication via WhatsApp and a dedication to the Moroccan market, we are here to help you stay connected."
-               data-ar="في H2 تك، نحن لا نبيع المنتجات فحسب؛ بل نقدم الحلول. مع التواصل السريع عبر واتساب والتفاني في السوق المغربي، نحن هنا لمساعدتك على البقاء متصلاً.">
-               At H2 Tech, we don't just sell products; we provide solutions. With fast communication via WhatsApp and a dedication to the Moroccan market, we are here to help you stay connected.
+            <p data-en="We believe that premium tech should be accessible to everyone."
+               data-ar="نحن نؤمن بأن التقنية المميزة يجب أن تكون في متناول الجميع.">
+               We believe that premium tech should be accessible to everyone.
             </p>
         </div>
 
         <footer class="footer">
-            <p data-en="© 2024 H2 Tech - Premium Electronics by H&H" data-ar="© 2024 H2 تك - إلكترونيات مميزة من H&H">© 2024 H2 Tech - Premium Electronics by H&H</p>
+            <p data-en="© 2024 H2 Tech" data-ar="© 2024 H2 تك">© 2024 H2 Tech</p>
         </footer>
     </div>
 
     <script>
         function switchLanguage(lang) {
-            // Update button visual state
+            document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-en], [data-ar]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.textContent = text;
+            });
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.textContent.toLowerCase() === lang) {
+                if (btn.textContent.toLowerCase().includes(lang)) {
                     btn.classList.add('active');
                 }
             });
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-                if (element.hasAttribute(data-${lang})) {
-                    element.textContent = element.getAttribute(data-${lang});
-                }
-            });
-
-            // Adjust text direction (RTL for Arabic, LTR for English)
-            document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
         }
     </script>
 </body>
