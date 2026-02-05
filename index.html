@@ -24,8 +24,8 @@
             margin: 0 auto;
         }
 
-        /* Language Switcher & Navigation */
-        .language-switcher {
+        /* Language Switcher & Navigation Bar */
+        .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,23 +42,19 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-decoration: none; /* For the link */
+            text-decoration: none;
             display: inline-block;
             color: #333;
         }
 
         .lang-btn.active {
-            background: #667eea;
+            background: #2c3e50;
             color: white;
         }
 
         .about-link-btn {
             background: #2c3e50;
             color: white;
-        }
-
-        .about-link-btn:hover {
-            background: #34495e;
         }
 
         /* Header */
@@ -71,21 +67,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .header h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            color: #666;
-            font-size: 1.2rem;
-        }
+        .logo { font-size: 3rem; margin-bottom: 10px; }
+        .header h1 { color: #2c3e50; font-size: 2.5rem; margin-bottom: 10px; }
+        .tagline { color: #666; font-size: 1.2rem; }
 
         /* Products Grid */
         .products-grid {
@@ -105,27 +89,10 @@
             position: relative;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .product-title {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .product-description {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image { font-size: 3rem; margin-bottom: 15px; }
+        .product-title { color: #2c3e50; font-size: 1.3rem; margin-bottom: 10px; font-weight: bold; }
+        .product-description { color: #666; margin-bottom: 20px; line-height: 1.5; height: 3em; overflow: hidden;}
 
         .whatsapp-btn {
             background: #25D366;
@@ -138,10 +105,6 @@
             transition: background 0.3s ease;
         }
 
-        .whatsapp-btn:hover {
-            background: #128C7E;
-        }
-
         /* Contact Section */
         .contact-section {
             background: white;
@@ -151,18 +114,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .contact-title {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-            padding: 20px;
-        }
+        .footer { text-align: center; color: white; margin-top: 30px; padding: 20px; }
 
         .feature-badge {
             background: #e74c3c;
@@ -175,28 +127,24 @@
             right: -10px;
         }
 
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="language-switcher">
+        <div class="nav-bar">
             <div>
                 <a href="about.html" class="about-link-btn" data-en="ℹ️ About Us" data-ar="ℹ️ من نحن">ℹ️ About Us</a>
             </div>
             <div>
-                <button class="lang-btn active" onclick="switchLanguage('en')">EN English</button>
-                <button class="lang-btn" onclick="switchLanguage('ar')">AR العربية</button>
+                <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
             </div>
         </div>
 
         <header class="header">
             <div class="logo">⚡</div>
-            <h1>H2 Tech</h1>
+            <h1 data-en="H2 Tech" data-ar="H2 تك">H2 Tech</h1>
             <p class="tagline" data-en="Premium Electronics by H&H" data-ar="إلكترونيات مميزة من H&H">
                 Premium Electronics by H&H
             </p>
@@ -207,8 +155,8 @@
                 <div class="feature-badge" data-en="Trending" data-ar="الأكثر طلباً">Trending</div>
                 <div class="product-image">⌚</div>
                 <h3 class="product-title" data-en="Smart Watch Pro" data-ar="ساعة ذكية برو">Smart Watch Pro</h3>
-                <p class="product-description" data-en="Track fitness, receive notifications, and stay connected. Waterproof & long battery life." data-ar="تابع لياقتك البدنية، استقبل الإشعارات، وابق متصلاً. مقاومة للماء وبطارية طويلة الأمد.">
-                    Track fitness, receive notifications, and stay connected. Waterproof & long battery life.
+                <p class="product-description" data-en="Track fitness, receive notifications, and stay connected." data-ar="تابع لياقتك البدنية، استقبل الإشعارات، وابق متصلاً.">
+                    Track fitness, receive notifications, and stay connected.
                 </p>
                 <a href="smartwatches.html" class="whatsapp-btn" data-en="📱 Show Smartwatch" data-ar="📱 عرض الساعة الذكية">
                     📱 Show Smartwatch
@@ -219,8 +167,8 @@
                 <div class="feature-badge" data-en="Best Seller" data-ar="الأفضل مبيعاً">Best Seller</div>
                 <div class="product-image">🎧</div>
                 <h3 class="product-title" data-en="Wireless Earbuds" data-ar="سماعات لاسلكية">Wireless Earbuds</h3>
-                <p class="product-description" data-en="Crystal clear sound with active noise cancellation. Perfect for music and calls." data-ar="صوت نقي واضح مع إلغاء الضوضاء النشط. مثالية للموسيقى والمكالمات.">
-                    Crystal clear sound with active noise cancellation. Perfect for music and calls.
+                <p class="product-description" data-en="Crystal clear sound with noise cancellation." data-ar="صوت نقي واضح مع إلغاء الضوضاء.">
+                    Crystal clear sound with noise cancellation.
                 </p>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Wireless%20Earbuds" class="whatsapp-btn" data-en="📱 Show Earbuds" data-ar="📱 عرض السماعات">
                     📱 Show Earbuds
@@ -230,42 +178,19 @@
             <div class="product-card">
                 <div class="product-image">🔋</div>
                 <h3 class="product-title" data-en="Super Power Bank" data-ar="شاحن محمول قوي">Super Power Bank</h3>
-                <p class="product-description" data-en="20000mAh massive capacity. Fast charging for all your devices." data-ar="سعة ضخمة 20000 مللي أمبير. شحن سريع لجميع أجهزتك.">
-                    20000mAh massive capacity. Fast charging for all your devices.
+                <p class="product-description" data-en="20000mAh massive capacity. Fast charging." data-ar="سعة ضخمة 20000 مللي أمبير. شحن سريع.">
+                    20000mAh massive capacity. Fast charging.
                 </p>
                 <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Super%20Power%20Bank" class="whatsapp-btn" data-en="📱 Show Power Bank" data-ar="📱 عرض الشاحن">
                     📱 Show Power Bank
                 </a>
             </div>
-
-            <div class="product-card">
-                <div class="feature-badge" data-en="New" data-ar="جديد">New</div>
-                <div class="product-image">🔊</div>
-                <h3 class="product-title" data-en="Bluetooth Speaker" data-ar="سماعة بلوتوث">Bluetooth Speaker</h3>
-                <p class="product-description" data-en="360° surround sound, waterproof design, and 12-hour playtime." data-ar="صوت محيط 360 درجة، تصميم مقاوم للماء، و 12 ساعة تشغيل.">
-                    360° surround sound, waterproof design, and 12-hour playtime.
-                </p>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Bluetooth%20Speaker" class="whatsapp-btn" data-en="📱 Show Speaker" data-ar="📱 عرض السماعة">
-                    📱 Show Speaker
-                </a>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🎵</div>
-                <h3 class="product-title" data-en="Premium Headphones" data-ar="سماعات رأس مميزة">Premium Headphones</h3>
-                <p class="product-description" data-en="Over-ear comfort with studio-quality sound. Perfect for gaming and music." data-ar="راحة للأذن مع صوت بجودة الاستوديو. مثالية للألعاب والموسيقى.">
-                    Over-ear comfort with studio-quality sound. Perfect for gaming and music.
-                </p>
-                <a href="https://wa.me/212689622405?text=Hi%20H2%20Tech!%20I%20want%20to%20buy%20Premium%20Headphones" class="whatsapp-btn" data-en="📱 Show Headphones" data-ar="📱 عرض سماعات الرأس">
-                    📱 Show Headphones
-                </a>
-            </div>
         </div>
 
         <div class="contact-section">
-            <h3 class="contact-title" data-en="Need Help Choosing?" data-ar="تحتاج مساعدة في الاختيار؟">Need Help Choosing?</h3>
-            <p class="product-description" data-en="Our tech experts are here to help you find the perfect gadget!" data-ar="خبراؤنا التقنيون هنا لمساعدتك في العثور على الجهاز المثالي!">
-                Our tech experts are here to help you find the perfect gadget!
+            <h3 data-en="Need Help Choosing?" data-ar="تحتاج مساعدة في الاختيار؟">Need Help Choosing?</h3>
+            <p class="product-description" data-en="Our experts are here to help you!" data-ar="خبراؤنا هنا لمساعدتك!">
+                Our experts are here to help you!
             </p>
             <a href="https://wa.me/212689622405" class="whatsapp-btn" data-en="💬 Chat on WhatsApp" data-ar="💬 تواصل على واتساب">
                 💬 Chat on WhatsApp
@@ -273,28 +198,28 @@
         </div>
 
         <footer class="footer">
-            <p data-en="© 2024 H2 Tech - Premium Electronics by H&H" data-ar="© 2024 H2 تك - إلكترونيات مميزة من H&H">© 2024 H2 Tech - Premium Electronics by H&H</p>
-            <p>WhatsApp: +212 689-622405</p>
+            <p data-en="© 2024 H2 Tech - H&H Premium Electronics" data-ar="© 2024 H2 تك - H&H إلكترونيات مميزة">© 2024 H2 Tech - H&H Premium Electronics</p>
         </footer>
     </div>
 
     <script>
         function switchLanguage(lang) {
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-                if (element.hasAttribute(data-${lang})) {
-                    element.textContent = element.getAttribute(data-${lang});
-                }
+            // 1. Change direction for Arabic
+            document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+
+            // 2. Update all text elements
+            document.querySelectorAll('[data-en], [data-ar]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.textContent = text;
             });
 
-            // Adjust text direction for Arabic
-            document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+            // 3. Update active button style
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(lang)) {
+                    btn.classList.add('active');
+                }
+            });
         }
     </script>
 </body>
