@@ -26,11 +26,13 @@
 
         /* Language Switcher */
         .language-switcher {
-            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
 
-        .lang-btn {
+        .lang-btn, .about-toggle-btn {
             background: white;
             border: none;
             padding: 10px 20px;
@@ -39,11 +41,21 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .lang-btn.active {
             background: #667eea;
             color: white;
+        }
+
+        .about-toggle-btn {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .about-toggle-btn:hover {
+            background: #34495e;
         }
 
         /* Header */
@@ -70,6 +82,22 @@
         .tagline {
             color: #666;
             font-size: 1.2rem;
+        }
+
+        /* About Us Section (New) */
+        #about-section {
+            display: none; /* Hidden by default */
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Products Grid */
@@ -169,13 +197,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Language Switcher -->
         <div class="language-switcher">
-            <button class="lang-btn active" onclick="switchLanguage('en')">EN English</button>
-            <button class="lang-btn" onclick="switchLanguage('ar')">AR العربية</button>
+            <div>
+                <button class="about-toggle-btn" onclick="toggleAbout()" data-en="ℹ️ About Us" data-ar="ℹ️ من نحن">ℹ️ About Us</button>
+            </div>
+            <div>
+                <button class="lang-btn active" onclick="switchLanguage('en')">EN English</button>
+                <button class="lang-btn" onclick="switchLanguage('ar')">AR العربية</button>
+            </div>
         </div>
 
-        <!-- Header Section -->
         <header class="header">
             <div class="logo">⚡</div>
             <h1>H2 Tech</h1>
@@ -184,9 +215,16 @@
             </p>
         </header>
 
-        <!-- Products Grid -->
+        <section id="about-section">
+            <h2 class="contact-title" data-en="About H2 Tech" data-ar="حول H2 تك">About H2 Tech</h2>
+            <p class="product-description" 
+               data-en="H2 Tech is your premier destination for high-quality electronics. Founded by H&H, we strive to bring the latest technology, from smartwatches to audio gear, directly to your doorstep with a focus on quality and customer satisfaction." 
+               data-ar="H2 تك هي وجهتكم الأولى للإلكترونيات عالية الجودة. تأسست بواسطة H&H، ونحن نسعى جاهدين لتقديم أحدث التقنيات، من الساعات الذكية إلى الأجهزة الصوتية، مباشرة إلى باب منزلك مع التركيز على الجودة ورضا العملاء.">
+               H2 Tech is your premier destination for high-quality electronics. Founded by H&H, we strive to bring the latest technology, from smartwatches to audio gear, directly to your doorstep with a focus on quality and customer satisfaction.
+            </p>
+        </section>
+
         <div class="products-grid">
-            <!-- Smart Watch -->
             <div class="product-card">
                 <div class="feature-badge" data-en="Trending" data-ar="الأكثر طلباً">Trending</div>
                 <div class="product-image">⌚</div>
@@ -199,7 +237,6 @@
                 </a>
             </div>
 
-            <!-- Earbuds -->
             <div class="product-card">
                 <div class="feature-badge" data-en="Best Seller" data-ar="الأفضل مبيعاً">Best Seller</div>
                 <div class="product-image">🎧</div>
@@ -212,7 +249,6 @@
                 </a>
             </div>
 
-            <!-- Power Bank -->
             <div class="product-card">
                 <div class="product-image">🔋</div>
                 <h3 class="product-title" data-en="Super Power Bank" data-ar="شاحن محمول قوي">Super Power Bank</h3>
@@ -224,7 +260,6 @@
                 </a>
             </div>
 
-            <!-- Speaker -->
             <div class="product-card">
                 <div class="feature-badge" data-en="New" data-ar="جديد">New</div>
                 <div class="product-image">🔊</div>
@@ -237,7 +272,6 @@
                 </a>
             </div>
 
-            <!-- Headphones -->
             <div class="product-card">
                 <div class="product-image">🎵</div>
                 <h3 class="product-title" data-en="Premium Headphones" data-ar="سماعات رأس مميزة">Premium Headphones</h3>
@@ -250,7 +284,6 @@
             </div>
         </div>
 
-        <!-- Contact Section -->
         <div class="contact-section">
             <h3 class="contact-title" data-en="Need Help Choosing?" data-ar="تحتاج مساعدة في الاختيار؟">Need Help Choosing?</h3>
             <p class="product-description" data-en="Our tech experts are here to help you find the perfect gadget!" data-ar="خبراؤنا التقنيون هنا لمساعدتك في العثور على الجهاز المثالي!">
@@ -277,10 +310,23 @@
             
             // Update all translatable elements
             document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-                if (element.hasAttribute(`data-${lang}`)) {
-                    element.textContent = element.getAttribute(`data-${lang}`);
+                if (element.hasAttribute(data-${lang})) {
+                    element.textContent = element.getAttribute(data-${lang});
                 }
             });
+
+            // Adjust text direction for Arabic
+            document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+        }
+
+        function toggleAbout() {
+            const aboutSection = document.getElementById('about-section');
+            if (aboutSection.style.display === 'block') {
+                aboutSection.style.display = 'none';
+            } else {
+                aboutSection.style.display = 'block';
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     </script>
 </body>
